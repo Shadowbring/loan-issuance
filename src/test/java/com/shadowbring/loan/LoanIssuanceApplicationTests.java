@@ -1,6 +1,6 @@
-package com.shadowbring;
+package com.shadowbring.loan;
 
-import com.shadowbring.repository.LoanRecordRepository;
+import com.shadowbring.loan.repository.LoanRecordRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,12 +13,11 @@ import static org.junit.Assert.assertEquals;
 @SpringApplicationConfiguration(classes = LoanIssuanceApplication.class)
 public class LoanIssuanceApplicationTests {
 
-    @Autowired
-    private LoanRecordRepository repository;
+	@Autowired
+	private LoanRecordRepository repository;
 
-    @Test
-    public void contextLoads() {
-        assertEquals(repository.findAll().size(), 2);
-    }
-
+	@Test
+	public void contextLoads() {
+		assertEquals(repository.findAll().size(), 2);
+	}
 }

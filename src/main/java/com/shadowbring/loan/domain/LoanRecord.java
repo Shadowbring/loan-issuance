@@ -1,4 +1,4 @@
-package com.shadowbring.domain;
+package com.shadowbring.loan.domain;
 
 import lombok.Data;
 
