@@ -2,11 +2,7 @@ package com.shadowbring.loan.domain;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
+import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
@@ -17,18 +13,18 @@ public class LoanRecord {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @NotNull
+    @Column(nullable = false)
     private String clientFirstName;
 
-    @NotNull
+    @Column(nullable = false)
     private String clientLastName;
 
-    @NotNull
+    @Column(nullable = false)
     private String clientIp;
 
-    @NotNull
+    @Column(nullable = false)
     private BigDecimal loanAmount;
 
-    @NotNull
+    @Column(nullable = false)
     private long term;
 }
