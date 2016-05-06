@@ -1,6 +1,7 @@
 package com.shadowbring.loan;
 
 import com.shadowbring.loan.repository.LoanRecordRepository;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,6 @@ public class LoanIssuanceApplicationTests {
 
 	@Test
 	public void contextLoads() {
-		assertEquals(repository.findAll().size(), 2);
+		assertEquals("Expected 2 (int value)", repository.findAll().size(), 2);
 	}
 }
