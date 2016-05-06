@@ -2,11 +2,13 @@ package com.shadowbring.loan.config;
 
 import com.shadowbring.loan.domain.LoanRecord;
 import com.shadowbring.loan.repository.LoanRecordRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 
 import java.math.BigDecimal;
 
@@ -18,6 +20,7 @@ public class AppConfig {
     private LoanRecordRepository repository;
 
     @Bean
+    @Profile({"dev", "default"})
     public CommandLineRunner commandLineRunner() {
         return (args) -> {
             LoanRecord loanRecord = new LoanRecord();
