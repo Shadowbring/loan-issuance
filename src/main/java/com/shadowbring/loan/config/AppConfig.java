@@ -12,8 +12,11 @@ import org.springframework.context.annotation.Profile;
 
 import java.math.BigDecimal;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Configuration
 @EnableAutoConfiguration
+@Slf4j
 public class AppConfig {
 
     @Autowired
@@ -35,6 +38,7 @@ public class AppConfig {
             loanRecord2.setClientIp("127.0.0.1");
             loanRecord2.setLoanAmount(BigDecimal.valueOf(100500100.69));
             repository.save(loanRecord2);
+            log.info("Entities pushed: [{}]", repository.findAll().size());
         };
     }
 }
