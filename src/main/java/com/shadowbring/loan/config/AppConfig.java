@@ -5,7 +5,6 @@ import com.shadowbring.loan.repository.LoanRecordRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
@@ -15,7 +14,6 @@ import java.math.BigDecimal;
 import lombok.extern.slf4j.Slf4j;
 
 @Configuration
-@EnableAutoConfiguration
 @Slf4j
 public class AppConfig {
 
