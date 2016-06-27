@@ -7,17 +7,12 @@ import java.math.BigDecimal;
 
 @Entity
 @Data
+@SequenceGenerator(name = "recordSequence", sequenceName = "recordSequence", allocationSize = 1)
 public class LoanRecord {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "recordSequence")
     private long id;
-
-    @Column(nullable = false)
-    private String clientFirstName;
-
-    @Column(nullable = false)
-    private String clientLastName;
 
     @Column(nullable = false)
     private String clientIp;
@@ -27,4 +22,8 @@ public class LoanRecord {
 
     @Column(nullable = false)
     private long term;
+
+    @ManyToOne
+    @JoinColumn(nullable = false)
+    private LoanIssuer loanIssuer;
 }
